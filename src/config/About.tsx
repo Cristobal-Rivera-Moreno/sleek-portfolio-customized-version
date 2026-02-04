@@ -21,6 +21,6 @@ export const mySkills = [
 ];
 
 export const about = {
-  name: 'Ramkrishna Swarnkar',
-  description: `I'm a Full Stack web developer and Open Source Contributor, I love building products to solve real-world problems. I'm specialized in building MVP's.`,
+  name: 'Cristobal Rivera Moreno',
+  description: `Driven Mobile Developer with a passion for crafting seamless and efficient mobile applications. With a strong foundation in Android development, I specialize in building user-centric solutions that prioritize performance and usability. My expertise spans across various technologies, including Kotlin, Java, and Jetpack Compose, enabling me to create robust and scalable mobile experiences. Committed to continuous learning and innovation, I thrive in dynamic environments where I can contribute to impactful projects and stay abreast of the latest industry trends.`,
 };

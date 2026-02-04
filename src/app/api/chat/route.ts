@@ -175,11 +175,12 @@ export async function POST(request: NextRequest) {
       },
     };
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:streamGenerateContent?alt=sse&key=${apiKey}`;
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse`;
 
     const response = await fetch(geminiUrl, {
       method: 'POST',
       headers: {
+        'x-goog-api-key': apiKey,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(requestBody),
@@ -192,7 +193,7 @@ export async function POST(request: NextRequest) {
     const encoder = new TextEncoder();
 
     const stream = new ReadableStream({
-      async start(controller) {
+      async pull(controller) {
         try {
           const parser = createParser({
             onEvent: (event) => {
@@ -202,12 +203,16 @@ export async function POST(request: NextRequest) {
                 if (text) {
                   // Send as Server-Sent Event format
                   const sseData = `data: ${JSON.stringify({ text })}\n\n`;
+                  console.log('Sending SSE data:', sseData);
                   controller.enqueue(encoder.encode(sseData));
                 }
               } catch (parseError) {
                 console.error('Parse error:', parseError);
               }
             },
+            onError: (error) => {
+              //console.error('Parser error:', error);
+            }
           });
 
           if (!response.body) {
@@ -220,7 +225,7 @@ export async function POST(request: NextRequest) {
           while (true) {
             const { done, value } = await reader.read();
             if (done) break;
-
+            console.log('Received chunk from Gemini API:', decoder.decode(value));
             parser.feed(decoder.decode(value));
           }
 

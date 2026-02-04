@@ -31,7 +31,7 @@ interface Message {
 const initialMessages: Message[] = [
   {
     id: 1,
-    text: "Hello! I'm Ram's Portfolio Assistant. How can I help you?",
+    text: "Hi! I'm Cristobal's Portfolio Assistant. What can I do for you?",
     sender: 'bot',
     timestamp: new Date().toLocaleTimeString([], {
       hour: '2-digit',
@@ -187,7 +187,8 @@ const ChatBubble: React.FC = () => {
 
         const chunk = decoder.decode(value);
         const lines = chunk.split('\n');
-
+        console.log('Received chunk:', chunk);
+        console.log('Parsed lines:', lines);
         for (const line of lines) {
           if (line.startsWith('data: ')) {
             try {
@@ -199,7 +200,7 @@ const ChatBubble: React.FC = () => {
 
               if (data.text) {
                 accumulatedText += data.text;
-
+                console.log('Accumulated text:', accumulatedText);
                 // Update the streaming message in real-time
                 setMessages((prev) =>
                   prev.map((msg) =>

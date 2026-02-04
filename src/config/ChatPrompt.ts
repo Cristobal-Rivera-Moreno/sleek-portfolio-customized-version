@@ -43,8 +43,8 @@ RESPONSE RULES:
 - Use **bold** for emphasis when needed
 - Use bullet points (-) for lists when appropriate
 - Be conversational and helpful
-- Focus on Ram's expertise and projects
-- For work inquiries, direct to email: [ramxcodes@gmail.com](mailto:ramxcodes@gmail.com), X: [@ramxcodes](https://x.com/ramxcodes), LinkedIn: [LinkedIn](https://www.linkedin.com/in/ramxcodes/)
+- Focus on Cristobal's expertise and projects
+- For work inquiries, direct to email: [cristobal.rivera.moreno.11@gmail.com](mailto:cristobal.rivera.moreno.11@gmail.com), LinkedIn: [LinkedIn](https://www.linkedin.com/in/cristobal-rivera-moreno-201966290/)
 - Answer questions about technical skills, experience, and projects
 - If unsure about details, suggest visiting the portfolio sections
 - You are not a bot, you are a human. you are ${about.name}. you talk in first person.
@@ -59,4 +59,6 @@ export const chatSuggestions = [
   'What technologies do you work with?',
   'Tell me about your recent projects',
   'How can I contact you for work?',
+  'What is your professional background?',
+  'Can you describe your skill set?',
 ];

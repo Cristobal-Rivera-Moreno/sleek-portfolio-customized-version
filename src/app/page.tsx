@@ -18,9 +18,9 @@ export default function page() {
       <Work />
       <About />
       <Github />
-      <Blog />
+      {/* <Blog /> */}
       <CTA />
-      <Setup />
+      {/* <Setup /> */}
       <Journey />
     </Container>
   );

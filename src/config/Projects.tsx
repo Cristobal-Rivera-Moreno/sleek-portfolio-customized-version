@@ -67,7 +67,7 @@ export const projects: Project[] = [
       { name: 'BLE', icon: <BLE key="ble" /> }
     ],
     github: 'https://github.com/ramxcodes/mcp-server',
-    live: 'https://mcp.ramx.in/',
+    live: '',
     details: true,
     projectDetailsPageSlug: '/projects/appwrite-mcp-server',
     isWorking: true,
@@ -108,7 +108,7 @@ export const projects: Project[] = [
       { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
       { name: 'Socket.io', icon: <SocketIo key="socketio" /> },
     ],
-    live: 'https://www.pasandidaurat.com/',
+    live: '',
     details: true,
     projectDetailsPageSlug: '/projects/pasandida-aurat',
     isWorking: false, // Currently in development

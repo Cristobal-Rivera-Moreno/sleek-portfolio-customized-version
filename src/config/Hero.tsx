@@ -43,6 +43,7 @@ import ReactIcon from '@/components/technologies/ReactIcon';
 // Technology Components
 import TypeScript from '@/components/technologies/TypeScript';
 import CSharp from '@/components/technologies/CSharp';
+import Python from '@/components/technologies/Python';
 
 // Component mapping for skills
 export const skillComponents = {
@@ -60,7 +61,8 @@ export const skillComponents = {
   Java: Java,
   JetpackCompose: JetpackCompose,
   NestJs: NestJs,
-  CSharp
+  CSharp,
+  Python: Python,
 };
 
 export const heroConfig = {
@@ -115,13 +117,25 @@ export const heroConfig = {
       name: 'C Sharp',
       href: 'https://learn.microsoft.com/en-us/dotnet/csharp/',
       component: 'CSharp',
-    }
+    },
+    {
+      name: 'NextJs',
+      href: 'https://nextjs.org/',
+      component: 'NextJs',
+    },
+
+    {
+      name: 'Python',
+      href: 'https://www.python.org/',
+      component: 'Python',
+    },
+
   ],
 
   // Description Configuration
   description: {
     template:
-      'I develop mobile apps using {skills:0}, {skills:1}, {skills:2}, {skills:3}, {skills:4} and {skills:5} Besides, I have expertise in {skills:6}, {skills:7} and {skills:8} technologies as a backend developer \nI love building products that solve real-world problems and deliver seamless user experiences. Nowadays, I am knowledgeable about Android Development, nonetheless, I\'d like to learn iOS development too.',
+      'I develop mobile apps using {skills:0}, {skills:1}, {skills:2}, {skills:3}, {skills:4} and {skills:5} Besides, I have expertise as a full-stack developer in {skills:6}, {skills:7}, {skills:8}, {skills:9} {skills:10} \nI love building products that solve real-world problems and deliver seamless user experiences. Nowadays, I am knowledgeable about Android Development, nonetheless, I\'d like to learn iOS development too.',
   },
 
   // Buttons Configuration

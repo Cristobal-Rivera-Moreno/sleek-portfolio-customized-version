@@ -27,7 +27,7 @@ export default function About() {
             {mySkills.map((skill) => (
               <Tooltip key={skill.key}>
                 <TooltipTrigger asChild>
-                  <div className="mt-4 size-6 hover:cursor-pointer">
+                  <div className="mt-4 size-6 hover:cursor-pointer bg-white/80 rounded-md p-1 ">
                     {skill}
                   </div>
                 </TooltipTrigger>

@@ -1,28 +1,53 @@
 export const certificates = [
   {
-    file: '/blog/frontend-part-1.png',
-    title: 'SSoC Certificate',
-    issuer: 'Summer of Code (SSoC)',
-    date: '2025-10-10',
+    file: '/blog/android.png',
+    title: 'Android Development',
+    issuer: 'Udemy',
+    date: '2024-09-12',
   },
+
   {
-    file: '/blog/how-to-be-me.png',
-    title: 'Example Certificate 1',
-    issuer: 'Example Issuer',
+    file: '/blog/docker.png',
+    title: 'Docker',
+    issuer: 'Udemy',
+    date: '2024-03-27',
+  },
+
+  {
+    file: '/blog/clean_code.png',
+    title: 'Clean Code',
+    issuer: 'Udemy',
+    date: '2024-03-29',
+  },
+
+  {
+    file: '/blog/excel.png',
+    title: 'Excel 2019',
+    issuer: 'Testing Program',
     date: '2024-01-01',
   },
+
   {
-    file: '/blog/frontend-part-1.png',
-    title: 'Example Certificate 2',
-    issuer: 'Example Issuer',
-    date: '2023-08-01',
+    file: '/blog/design_patterns.png',
+    title: 'Design Patterns in JS and TS',
+    issuer: 'Udemy',
+    date: '2023-10-18',
   },
+
   {
-    file: '/blog/how-to-be-me.png',
-    title: 'SSoC Participation Certificate',
-    issuer: 'SSoC',
-    date: '2025-10-10',
+    file: '/blog/solid_principles.png',
+    title: 'Design Patterns and SOLID principles',
+    issuer: 'Udemy',
+    date: '2023-10-18',
   },
+
+  {
+    file: '/blog/go.png',
+    title: 'Goolang',
+    issuer: 'Udemy',
+    date: '2023-10-31',
+  },
+  
 ];
 
 const achievementsConfig = {

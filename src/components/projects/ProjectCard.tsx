@@ -15,7 +15,7 @@ import {
 import { type Project } from '@/types/project';
 import { Link } from 'next-view-transitions';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import ArrowRight from '../svgs/ArrowRight';
 import Github from '../svgs/Github';
@@ -29,9 +29,18 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [aspectRatio, setAspectRatio] = useState<string | undefined>('16/9');
+
+  const handleLoadedMetadata = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const v = e.currentTarget;
+    if (v && v.videoWidth && v.videoHeight) {
+      setAspectRatio(`${v.videoWidth}/${v.videoHeight}`);
+    }
+  };
 
   return (
-    <Card className="group h-full w-full overflow-hidden border-gray-100 p-0 shadow-none transition-all dark:border-gray-800">
+    <Card className="group h-full w-full overflow-hidden border-gray-100 p-0 pb-10 shadow-none transition-all dark:border-gray-800">
       <CardHeader className="p-0">
         <div className="group relative aspect-video overflow-hidden">
           <Image
@@ -51,13 +60,24 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </div>
               </DialogTrigger>
               <DialogContent className="w-full max-w-4xl border-0 p-0">
-                <div className="aspect-video w-full">
+                <div
+                  className="w-full"
+                  style={{
+                    aspectRatio: aspectRatio,
+                    maxHeight: '80vh',
+                    width: '100%',
+                  }}
+                >
                   <video
-                    className="h-full w-full rounded-lg object-cover"
+                    ref={videoRef}
+                    className="h-full w-full rounded-lg object-contain bg-black"
                     src={project.video}
                     autoPlay
+                    muted
+                    playsInline
                     loop
                     controls
+                    onLoadedMetadata={handleLoadedMetadata}
                   />
                 </div>
                 <DialogTitle className="sr-only">{project.title}</DialogTitle>
@@ -79,13 +99,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <div className="flex items-center gap-2">
               <Tooltip>
                 <TooltipTrigger>
-                  <Link
-                    className="text-secondary hover:text-primary flex size-6 items-center justify-center transition-colors"
-                    href={project.link}
-                    target="_blank"
-                  >
-                    <Website />
-                  </Link>
+                  {
+                    project.link && (
+                      <Link
+                        className="text-secondary hover:text-primary flex size-6 items-center justify-center transition-colors"
+                        href={project.link}
+                        target="_blank"
+                      >
+                        <Website />
+                      </Link>
+                    )
+                  }
+        
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>View Website</p>
@@ -111,7 +136,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Description */}
-          <p className="text-secondary line-clamp-3">{project.description}</p>
+          <p className="text-secondary line-clamp-4">{project.description}</p>
 
           {/* Technologies */}
           <div>

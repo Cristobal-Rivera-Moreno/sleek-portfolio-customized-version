@@ -81,33 +81,44 @@ async function sendToTelegram(data: {
     return false;
   }
 
-  const message = `
-🔔 *New Contact Form Submission*
+  function escapeHtml(input: string) {
+    return input
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
 
-👤 *Name:* ${data.name.trim()}
-📧 *Email:* ${data.email.trim()}
-📱 *Phone:* ${data.phone.trim()}
-
-💬 *Message:*
-${data.message.trim()}
-
-⏰ *Submitted:* ${new Date().toISOString()}
-📍 *Timezone:* ${Intl.DateTimeFormat().resolvedOptions().timeZone}
-  `.trim();
+  const message = [
+    '🔔 <b>New Contact Form Submission</b>',
+    '',
+    `👤 <b>Name:</b> ${escapeHtml(data.name.trim())}`,
+    `📧 <b>Email:</b> ${escapeHtml(data.email.trim())}`,
+    `📱 <b>Phone:</b> ${escapeHtml(data.phone.trim())}`,
+    '',
+    '<b>Message:</b>',
+    `${escapeHtml(data.message.trim())}`,
+    '',
+    `⏰ <b>Submitted:</b> ${escapeHtml(new Date().toISOString())}`,
+    `📍 <b>Timezone:</b> ${escapeHtml(
+      Intl.DateTimeFormat().resolvedOptions().timeZone,
+    )}`,
+  ].join('\n');
 
   try {
     const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
-
+    console.log('Sending message to Telegram:', message);
+    console.log('Telegram API URL:', telegramUrl);
+    console.log('Telegram Chat ID:', telegramChatId);
     const response = await fetch(telegramUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        chat_id: telegramChatId,
-        text: message,
-        parse_mode: 'Markdown',
-      }),
+        body: JSON.stringify({
+          chat_id: telegramChatId,
+          text: message,
+          parse_mode: 'HTML',
+        }),
     });
 
     if (response.ok) {

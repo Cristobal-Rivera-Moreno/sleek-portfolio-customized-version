@@ -44,6 +44,7 @@ import ReactIcon from '@/components/technologies/ReactIcon';
 import TypeScript from '@/components/technologies/TypeScript';
 import CSharp from '@/components/technologies/CSharp';
 import Python from '@/components/technologies/Python';
+import Docker from '@/components/technologies/Docker';
 
 // Component mapping for skills
 export const skillComponents = {
@@ -63,6 +64,7 @@ export const skillComponents = {
   NestJs: NestJs,
   CSharp,
   Python: Python,
+  Docker: Docker,
 };
 
 export const heroConfig = {
@@ -130,12 +132,18 @@ export const heroConfig = {
       component: 'Python',
     },
 
+    {
+      name: 'Docker',
+      href: 'https://www.docker.com/',
+      component: 'Docker',
+    }
+
   ],
 
   // Description Configuration
   description: {
     template:
-      'I develop mobile apps using {skills:0}, {skills:1}, {skills:2}, {skills:3}, {skills:4} and {skills:5} Besides, I have expertise as a full-stack developer in {skills:6}, {skills:7}, {skills:8}, {skills:9} {skills:10} \nI love building products that solve real-world problems and deliver seamless user experiences. Nowadays, I am knowledgeable about Android Development, nonetheless, I\'d like to learn iOS development too.',
+      'I develop mobile apps using {skills:0}, {skills:1}, {skills:2}, {skills:3}, {skills:4} and {skills:5} Besides, I have expertise as a full-stack developer in {skills:6}, {skills:7}, {skills:8}, {skills:9}, {skills:10}, {skills:11}  \nI love building products that solve real-world problems and deliver seamless user experiences. Nowadays, I am knowledgeable about Android Development, nonetheless, I\'d like to learn iOS development too.',
   },
 
   // Buttons Configuration

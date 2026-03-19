@@ -15,7 +15,7 @@ export const projects: Project[] = [
     description:
       'A useful app for homeowners to manage and control their Lennox HVAC systems remotely with ease.',
     image: '/project/HO.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/notesbuddy.mp4?tr=orig',
+    video: 'https://ik.imagekit.io/hjmradn4t/HO.MP4',
     link: 'https://play.google.com/store/apps/details?id=com.lennox.s40.homeowner&hl=en',
     technologies: [
       { name: 'Android', icon: <Android key="android" /> },
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     description:
       'A powerful app for HVAC technicians to efficiently install, configure, and troubleshoot Lennox systems on-site.',
     image: '/project/STA.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/appwrite.mp4',
+    video: 'https://ik.imagekit.io/hjmradn4t/STA.MP4',
     link: 'https://play.google.com/store/apps/details?id=com.lennox.s40.installer&hl=en',
     technologies: [
       { name: 'Android', icon: <Android key="android" /> },

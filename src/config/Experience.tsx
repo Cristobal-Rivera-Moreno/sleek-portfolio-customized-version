@@ -1,31 +1,16 @@
 import Angular from '@/components/technologies/Angular';
-import AWS from '@/components/technologies/AWS';
-import BootStrap from '@/components/technologies/BootStrap';
-import Bun from '@/components/technologies/Bun';
 import Cisco from '@/components/technologies/Cisco';
 import CSharp from '@/components/technologies/CSharp';
-import CSS from '@/components/technologies/CSS';
 import ExpressJs from '@/components/technologies/ExpressJs';
-import Figma from '@/components/technologies/Figma';
-import Html from '@/components/technologies/Html';
-import JavaScript from '@/components/technologies/JavaScript';
 import Android from '@/components/technologies/mobile/Android';
 import BLE from '@/components/technologies/mobile/BLE';
 import Java from '@/components/technologies/mobile/Java';
 import JetpackCompose from '@/components/technologies/mobile/JetpackCompose';
 import Kotlin from '@/components/technologies/mobile/Kotlin';
-import MongoDB from '@/components/technologies/MongoDB';
-import NestJs from '@/components/technologies/NestJs';
-import NextJs from '@/components/technologies/NextJs';
-import NodeJs from '@/components/technologies/NodeJs';
 import PostgreSQL from '@/components/technologies/PostgreSQL';
 import Postman from '@/components/technologies/Postman';
-import Prisma from '@/components/technologies/Prisma';
-import ReactIcon from '@/components/technologies/ReactIcon';
 import SQLServer from '@/components/technologies/SQLServer';
-import TailwindCss from '@/components/technologies/TailwindCss';
 import TypeScript from '@/components/technologies/TypeScript';
-import Vercel from '@/components/technologies/Vercel';
 
 export interface Technology {
   name: string;
@@ -65,6 +50,7 @@ export const experiences: Experience[] = [
       'Led a comprehensive codebase refactoring initiative that improved maintainability, scalability, and development velocity across the entire platform.',
       'Maintained BLE connectivity and fixed related issues.',
       'Integrated various features and functionalities to enhance user experience.',
+      'Integrates unit tests and instrumented tests to ensure the reliability and stability of the mobile application, resulting in a significant reduction in bugs and efficiency improvements.',
     ],
     startDate: 'February 2024',
     endDate: 'Present',

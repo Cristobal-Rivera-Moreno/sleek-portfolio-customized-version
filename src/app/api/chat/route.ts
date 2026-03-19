@@ -196,7 +196,7 @@ export async function POST(request: NextRequest) {
       async pull(controller) {
         try {
           const parser = createParser({
-            onEvent: (event) => {
+                  onEvent: (event) => {
               try {
                 const data = JSON.parse(event.data);
                 const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -210,8 +210,8 @@ export async function POST(request: NextRequest) {
                 console.error('Parse error:', parseError);
               }
             },
-            onError: (error) => {
-              //console.error('Parser error:', error);
+                  onError: () => {
+                    // parser error (ignored)
             }
           });
 

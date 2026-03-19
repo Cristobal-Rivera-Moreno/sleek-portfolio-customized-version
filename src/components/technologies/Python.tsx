@@ -1,6 +1,4 @@
-import { de } from 'date-fns/locale';
-
-export default function () {
+export default function Python() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
       <linearGradient
